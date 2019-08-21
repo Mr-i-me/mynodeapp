@@ -16,10 +16,10 @@ var ContractSchema = new mongoose.Schema({
     imóvel: String
 
   },
-  stage_3
-  status: String,
-  enum: ['pending', 'aproved', 'rejected']
-
+  stage_3:{
+    status: String,
+    enum: ['pending', 'aproved', 'rejected']
+  }
 });
 mongoose.model('Contract', ContractSchema);
 module.exports = mongoose.model('Contract');
