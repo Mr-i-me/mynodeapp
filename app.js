@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
 var db = require('./database.js');
-var UserController = require('./controllers/UserController');
-app.use('/contracts', UserController);
+var ContractController = require('./controllers/ContractController');
+app.use('/contracts', ContractController);
 module.exports = app;
