@@ -11,8 +11,8 @@ let CheckoutSchema = new Schema({
 let UploadSchema = new Schema({
   documento: {
     type: String,
-    required: [true, 'Document is required']
-    default: "" // Set default to == nil
+    required: [true, 'Document is required'],
+    default: "" 
   },
   comprovanteRenda: {
     type: String,
@@ -27,22 +27,23 @@ let UploadSchema = new Schema({
 let UserSchema = new Schema({
   nome: {
     type: String,
-    required: [true, 'Name field is required']
+    required: [true, 'Name field is required'],
     default: ""
   },
   email: {
-    type: String
-    required [true, 'Email field is required'],
+    type: String,
+    required: [true, 'Email field is required'],
     default: ""
   },
   cpf: {
     type: String,
-    required [true, 'CPF field is required'],
-    default: ""
+    required: [true, 'CPF field is required'],
+    default: "",
+    unique: true
   },
   valorEmprestimo: {
     type: Number,
-    required [true, 'Valor do Emprestimo field is required'],
+    required: [true, 'Valor do Emprestimo field is required'],
     default: 0
   },
   rendaMensal: {
@@ -54,7 +55,7 @@ let UserSchema = new Schema({
     default: Date.now
   },
   estadoCivil: {
-    type: ['solteiro(a)', 'casado(a)', 'divorciado(a)']
+    type: ['solteiro(a)', 'casado(a)', 'divorciado(a)'],
     default: undefined
   },
   endereco: {
