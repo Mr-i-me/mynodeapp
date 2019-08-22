@@ -1,6 +1,8 @@
-var mongoose = require('mongoose');
-var ContractSchema = new mongoose.Schema({
-  stage_1: {
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const ContractSchema = new Schema({
+  create: {
     name: [ String, required: true]
     email: String,
     cpf: String,
