@@ -1,5 +1,4 @@
 const express = require('express');
-const server = require('./bin/server')
 const mongoose = require('mongoose');
 
 // Setup express app
@@ -30,7 +29,7 @@ app.use(function (err, req, res, next) {
 });
 
 //Listen for connection on port
-app.listen(process.env.PORT || 3000, function() {
-  console.log('Server listening for connection');
-});
+// app.listen(process.env.PORT || 3000, function() {
+//   console.log('Server listening for connection');
+// });
 
