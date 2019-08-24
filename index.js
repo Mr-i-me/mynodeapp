@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const db = require('./database.js');
+const bodyParser = require('body-parser');
 
 // Setup express app
 let app = express();
-
-const db = require('./database.js');
 
 //Connect to mongodb
 mongoose.connect('mongodb://localhost/user');
@@ -13,8 +13,9 @@ mongoose.connect('mongodb://localhost/user');
 mongoose.Promise = global.Promise;
 
 //Static file Middleware
-app.use(express.static('public'));
-
+// app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 //Body-parser Middleware
 
 
@@ -32,4 +33,6 @@ app.use(function (err, req, res, next) {
 // app.listen(process.env.PORT || 3000, function() {
 //   console.log('Server listening for connection');
 // });
+
+
 
