@@ -1,7 +1,5 @@
 const express = require('express');
 const server = require('./bin/server')
-
-require('./config/routes')(server)
 const mongoose = require('mongoose');
 
 // Setup express app
@@ -22,7 +20,7 @@ app.use(express.static('public'));
 
 
 //Set route Middleware
-app.use('/api', require('./Routes/api'));
+app.use('/api', require('./routes/api'));
 
 //Error handling Middleware
 app.use(function (err, req, res, next) {
