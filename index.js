@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/user');
 mongoose.Promise = global.Promise;
 
 //Static file Middleware
-// app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //Body-parser Middleware
