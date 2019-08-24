@@ -1,11 +1,13 @@
 const express = require('express');
+const server = require('./bin/server')
 
+require('./config/routes')(server)
 const mongoose = require('mongoose');
 
 // Setup express app
 let app = express();
 
-var db = require('./database.js');
+const db = require('./database.js');
 
 //Connect to mongodb
 mongoose.connect('mongodb://localhost/user');
